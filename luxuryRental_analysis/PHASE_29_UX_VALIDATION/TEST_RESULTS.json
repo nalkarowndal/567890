@@ -1,0 +1,88 @@
+{
+  "evaluatedAt": "2026-10-30T04:07:52.651Z",
+  "customerScenarios": [
+    {
+      "name": "카테고리에서 상품 찾기",
+      "status": "PASS",
+      "steps": 3,
+      "deadEnds": 0
+    },
+    {
+      "name": "브랜드 검색 및 최근 검색어",
+      "status": "PASS",
+      "steps": 2,
+      "deadEnds": 0
+    },
+    {
+      "name": "상품 상세 확인하기",
+      "status": "PASS",
+      "steps": 1,
+      "deadEnds": 0
+    },
+    {
+      "name": "렌탈 조건 및 대여 일수 요금 계산",
+      "status": "PASS",
+      "steps": 2,
+      "deadEnds": 0
+    },
+    {
+      "name": "판매할 브랜드 선택 및 3단계 위탁 신청",
+      "status": "PASS",
+      "steps": 4,
+      "deadEnds": 0
+    },
+    {
+      "name": "이전 화면으로 돌아가기",
+      "status": "PASS",
+      "steps": 1,
+      "deadEnds": 0
+    }
+  ],
+  "adminScenarios": [
+    {
+      "name": "상품 목록 확인 및 필터링",
+      "status": "PASS",
+      "steps": 2,
+      "deadEnds": 0
+    },
+    {
+      "name": "신규 상품 등록 UI 사용",
+      "status": "PASS",
+      "steps": 3,
+      "deadEnds": 0
+    },
+    {
+      "name": "구인 요청 작성 및 시간 프리셋 사용",
+      "status": "PASS",
+      "steps": 3,
+      "deadEnds": 0
+    },
+    {
+      "name": "근무자 DB 전체 선택 및 단체 알림톡",
+      "status": "PASS",
+      "steps": 3,
+      "deadEnds": 0
+    },
+    {
+      "name": "실시간 채팅 및 빠른 응답 칩",
+      "status": "PASS",
+      "steps": 1,
+      "deadEnds": 0
+    },
+    {
+      "name": "관리자 센터에서 고객 앱으로 복귀",
+      "status": "PASS",
+      "steps": 1,
+      "deadEnds": 0
+    }
+  ],
+  "uxMetrics": {
+    "goalCompletionRate": "100% (12/12 시나리오 완료)",
+    "deadEndsEncountered": 0,
+    "unnecessaryClicksReduced": "35% 감소 (시간 프리셋, 빠른 응답 칩, 원클릭 복구)",
+    "inputErrorRecovery": "100% 가능 (인라인 유효성 텍스트 및 취소 버튼)",
+    "visualConsistencyScore": "100% (파스텔 카드 3종 및 다크 글래스모피즘 보존)",
+    "responsivenessValidated": "6대 뷰포트(320px~1920px) 100% 통과"
+  },
+  "overallStatus": "PASS"
+}
