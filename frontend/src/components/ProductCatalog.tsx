@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ShoppingBag, RefreshCw } from 'lucide-react';
 import { searchProducts, type SearchProduct } from '../lib/productSearch.mjs';
+import { useApp } from '../context/AppContext';
 
 export function ProductCatalog({ 
   brand = '', 
@@ -11,6 +12,7 @@ export function ProductCatalog({
   rentalOnly?: boolean;
   keyword?: string;
 }) {
+  const { setSelectedProduct } = useApp();
   const [products, setProducts] = useState<SearchProduct[]>([]);
   const [state, setState] = useState<'loading' | 'success' | 'error'>('loading');
   const [retry, setRetry] = useState(0);
@@ -124,6 +126,13 @@ export function ProductCatalog({
               tabIndex={0}
               role="button"
               aria-label={`${item.brand || '명품 셀렉션'} ${item.title}`}
+              onClick={() => setSelectedProduct(item)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProduct(item);
+                }
+              }}
               className="min-w-0 flex flex-col group cursor-pointer interactive-card rounded-2xl p-1 -m-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900"
             >
               {/* 상품 이미지 플레이스홀더 */}

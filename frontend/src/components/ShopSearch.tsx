@@ -4,7 +4,7 @@ import { ChevronLeft, Search, X, ShoppingBag } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export const ShopSearch = () => {
-  const { activeOverlay, setActiveOverlay } = useApp();
+  const { activeOverlay, setActiveOverlay, setSelectedProduct } = useApp();
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchProduct[]>([]);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -198,6 +198,17 @@ export const ShopSearch = () => {
                       data-testid="search-result-item"
                       data-product-id={item.id}
                       tabIndex={0}
+                      onClick={() => {
+                        setSelectedProduct(item);
+                        setActiveOverlay(null);
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setSelectedProduct(item);
+                          setActiveOverlay(null);
+                        }
+                      }}
                       className="rounded-2xl border border-gray-100 p-4 hover:border-gray-300 transition-all flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs bg-white interactive-card cursor-pointer"
                     >
                       <div className="flex items-center gap-3 min-w-0">

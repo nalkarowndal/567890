@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext, useCallback, type ReactNode } from 'react';
+import type { SearchProduct } from '../lib/productSearch.mjs';
 
 export type ViewState = 'SHOP_MAIN' | 'SHOP_ADMIN' | 'RECRUIT_APP' | 'SHOP_CATEGORY' | 'SHOP_SELL';
 export type Role = 'STORE' | 'ADMIN';
@@ -54,6 +55,8 @@ interface AppContextType {
   workerDB: Worker[];
   products: Product[];
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+  selectedProduct: SearchProduct | null;
+  setSelectedProduct: React.Dispatch<React.SetStateAction<SearchProduct | null>>;
   toastMessage: string | null;
   showToast: (msg: string) => void;
 }
@@ -63,6 +66,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [currentView, setCurrentView] = useState<ViewState>('SHOP_MAIN');
   const [activeOverlay, setActiveOverlay] = useState<'SEARCH' | 'LOGIN' | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<SearchProduct | null>(null);
   const [role, setRole] = useState<Role>('STORE');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -129,6 +133,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         workerDB,
         products,
         setProducts,
+        selectedProduct,
+        setSelectedProduct,
         toastMessage,
         showToast
       }}

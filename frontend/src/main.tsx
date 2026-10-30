@@ -14,6 +14,7 @@ import { RecruitApp } from './components/RecruitApp';
 import { ShopSearch } from './components/ShopSearch';
 import { ShopLike } from './components/ShopLike';
 import { BottomNav } from './components/BottomNav';
+import { ProductDetailModal } from './components/ProductDetailModal';
 
 // 3. 메인 라우터 (관리자 화면은 전체 화면 반응형, 쇼핑몰은 모바일 앱 비율 뷰 적용)
 const MainRouter = () => {
@@ -94,10 +95,11 @@ const MainRouter = () => {
           <BottomNav />
         </div>
 
-        {/* 슬라이딩 오버레이 (검색, 로그인) */}
+        {/* 슬라이딩 오버레이 (검색, 로그인) & 상품 상세 모달 */}
         <div ref={overlayRef}>
           <ShopSearch />
           <ShopLike />
+          <ProductDetailModal />
         </div>
         
       </div>
