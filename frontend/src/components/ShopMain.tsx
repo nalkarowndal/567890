@@ -57,7 +57,7 @@ export const ShopMain = () => {
       </aside>
 
       {/* 1. Header */}
-      <header className="sticky top-0 bg-white/95 backdrop-blur-md z-40 px-4 py-3 flex justify-between items-center border-b border-gray-100">
+      <header className="sticky top-0 bg-white/95 backdrop-blur-md z-40 px-4 py-3 flex justify-between items-center border-b border-gray-100/80 shadow-2xs">
         <button
           type="button"
           aria-label="LUXURYRENTAL 홈으로 이동"
@@ -66,7 +66,7 @@ export const ShopMain = () => {
         >
           LUXURYRENTAL
         </button>
-        <div className="flex items-center gap-1 text-gray-800">
+        <div className="flex items-center gap-1.5 text-gray-800">
           <button
             type="button"
             aria-label="상품 검색 열기"
@@ -89,7 +89,7 @@ export const ShopMain = () => {
             type="button"
             aria-label="관리자 화면으로 이동"
             onClick={() => setCurrentView('SHOP_ADMIN')}
-            className="text-indigo-600 bg-indigo-50 hover:bg-indigo-100 p-2 rounded-full transition ml-1"
+            className="text-indigo-600 bg-indigo-50/90 hover:bg-indigo-100 p-2 rounded-full transition ml-0.5 active:scale-95"
           >
             <Settings size={20} aria-hidden="true" />
           </button>
@@ -99,15 +99,16 @@ export const ShopMain = () => {
       {/* 2. 상단 로그인 인사말 & 간편 로그인 */}
       <section aria-label="로그인 안내 및 서비스 선택" className="p-5 bg-white mb-2 shadow-xs">
         <h2 className="text-xl font-bold text-gray-900 leading-snug mb-4">
-          어서오세요, <span className="text-orange-600">로그인</span> 후<br/>럭셔리렌탈을 이용해보세요
+          어서오세요, <span className="text-orange-600 font-extrabold">로그인</span> 후<br/>럭셔리렌탈을 이용해보세요
         </h2>
         
         <button 
           type="button"
           onClick={() => setActiveOverlay('LOGIN')} 
-          className="w-full bg-gray-900 hover:bg-black text-white font-bold py-3.5 rounded-xl mb-6 shadow-sm transition active:scale-[0.99]"
+          className="w-full bg-gray-900 hover:bg-black text-white font-bold py-3.5 rounded-xl mb-6 shadow-sm transition active:scale-[0.99] flex items-center justify-center gap-1.5"
         >
-          간편 로그인하기
+          <span>간편 로그인하기</span>
+          <ChevronRight size={16} aria-hidden="true" />
         </button>
 
         {/* 렌트하기 / 구매하기 / 판매하기 카드 */}
@@ -116,10 +117,10 @@ export const ShopMain = () => {
             <button
               type="button"
               onClick={() => setActiveOverlay('LOGIN')}
-              className="bg-pink-50/70 hover:bg-pink-50 border border-pink-100/80 p-4 rounded-2xl flex flex-col justify-between text-left transition active:scale-[0.98] shadow-xs min-h-[140px]"
+              className="bg-pink-50/70 hover:bg-pink-50/90 border border-pink-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[144px]"
             >
               <div>
-                <span className="text-[11px] bg-pink-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
+                <span className="text-[11px] bg-pink-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2 shadow-2xs">
                   첫 렌트 70% 할인
                 </span>
                 <h3 className="font-black text-gray-900 text-base">렌트하기</h3>
@@ -131,10 +132,10 @@ export const ShopMain = () => {
             <button
               type="button"
               onClick={() => setActiveOverlay('LOGIN')}
-              className="bg-blue-50/70 hover:bg-blue-50 border border-blue-100/80 p-4 rounded-2xl flex flex-col justify-between text-left transition active:scale-[0.98] shadow-xs min-h-[140px]"
+              className="bg-blue-50/70 hover:bg-blue-50/90 border border-blue-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[144px]"
             >
               <div>
-                <span className="text-[11px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
+                <span className="text-[11px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2 shadow-2xs">
                   정품 보증
                 </span>
                 <h3 className="font-black text-gray-900 text-base">구매하기</h3>
@@ -147,10 +148,10 @@ export const ShopMain = () => {
           <button
             type="button"
             onClick={() => setCurrentView('SHOP_SELL')}
-            className="w-full bg-green-50/70 hover:bg-green-50 border border-green-100/80 p-4 rounded-2xl flex justify-between items-center text-left transition active:scale-[0.99] shadow-xs"
+            className="w-full bg-green-50/70 hover:bg-green-50/90 border border-green-100/90 p-4 rounded-2xl flex justify-between items-center text-left transition-all interactive-card shadow-xs"
           >
             <div>
-              <span className="text-[11px] bg-green-700 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-1.5">
+              <span className="text-[11px] bg-green-700 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-1.5 shadow-2xs">
                 간편 위탁
               </span>
               <h3 className="font-black text-gray-900 text-base">판매하기</h3>
@@ -164,11 +165,11 @@ export const ShopMain = () => {
         <button
           type="button"
           onClick={() => setActiveOverlay('LOGIN')}
-          className="w-full bg-gradient-to-r from-gray-900 to-indigo-950 text-white p-5 rounded-2xl flex justify-between items-center shadow-md mb-6 text-left transition hover:opacity-95"
+          className="w-full bg-gradient-to-r from-gray-900 via-gray-950 to-indigo-950 text-white p-5 rounded-2xl flex justify-between items-center shadow-md mb-6 text-left transition-all hover:shadow-lg interactive-card"
         >
           <div>
-            <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded font-bold tracking-wider">EVENT</span>
-            <h3 className="font-extrabold text-lg mt-1">회원가입 이벤트</h3>
+            <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded font-bold tracking-wider backdrop-blur-xs">EVENT</span>
+            <h3 className="font-extrabold text-lg mt-1 tracking-tight">회원가입 이벤트</h3>
             <p className="text-xs text-gray-300 mt-0.5">간단하게 가입하고 가볍게 쇼핑!</p>
           </div>
           <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner" aria-hidden="true">
@@ -182,7 +183,7 @@ export const ShopMain = () => {
           <button
             type="button"
             onClick={() => showToast('[안내] 명품 구독하기 서비스 상세 안내가 준비 중입니다.')}
-            className="bg-gray-50 hover:bg-gray-100/80 border border-gray-100 p-4 rounded-xl text-left transition"
+            className="bg-gray-50/80 hover:bg-gray-100 border border-gray-100/80 p-4 rounded-xl text-left transition-all interactive-card"
           >
             <h4 className="font-bold text-gray-900 text-sm">명품 구독하기</h4>
             <p className="text-xs text-gray-500 mt-1">1달 구독료로 무제한 사용</p>
@@ -191,7 +192,7 @@ export const ShopMain = () => {
           <button
             type="button"
             onClick={() => showToast('[안내] 중고명품 구매 서비스 상세 안내가 준비 중입니다.')}
-            className="bg-gray-50 hover:bg-gray-100/80 border border-gray-100 p-4 rounded-xl text-left transition"
+            className="bg-gray-50/80 hover:bg-gray-100 border border-gray-100/80 p-4 rounded-xl text-left transition-all interactive-card"
           >
             <h4 className="font-bold text-gray-900 text-sm">중고명품 구매</h4>
             <p className="text-xs text-gray-500 mt-1">합리적인 명품 소비의 시작</p>
@@ -214,9 +215,9 @@ export const ShopMain = () => {
               key={idx}
               type="button"
               onClick={() => showToast(`[안내] '${menu.title}' 상세 페이지가 준비 중입니다.`)}
-              className="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-gray-50 transition active:scale-95"
+              className="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-gray-50/80 transition active:scale-95"
             >
-              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-xl shadow-xs">
+              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-xl shadow-2xs border border-gray-100/60">
                 {menu.icon}
               </div>
               <span className="text-[11px] font-bold text-gray-800 tracking-tight">{menu.title}</span>

@@ -59,9 +59,10 @@ export function ProductCatalog({
 
   return (
     <section aria-label="등록 상품 카탈로그" className="w-full">
-      <p className="mb-3 text-[11px] leading-relaxed text-gray-500">
-        [데모] 표시 상품은 화면 확인용 예시이며 실제 판매·예약 상품이 아닙니다. 이미지는 준비 중입니다.
-      </p>
+      <div className="mb-4 px-3 py-2.5 bg-gray-50 border border-gray-200/80 rounded-xl flex items-center gap-2 text-[11px] text-gray-600 font-medium">
+        <span className="font-bold text-gray-900 bg-white px-1.5 py-0.5 rounded text-[10px] shadow-2xs border border-gray-200">데모 안내</span>
+        <span className="truncate">표시 상품은 화면 확인용 예시이며 클릭하여 상세 렌탈·구매 조건을 확인할 수 있습니다.</span>
+      </div>
 
       {!rentalOnly && (
         <div className="flex gap-2 mb-4" role="tablist" aria-label="상품 유형 필터">
@@ -71,10 +72,10 @@ export function ProductCatalog({
               role="tab"
               aria-selected={filter === tab}
               onClick={() => setFilter(tab)}
-              className={`min-h-[38px] rounded-full border px-4 text-xs font-bold transition-all ${
+              className={`min-h-[38px] rounded-full border px-4 text-xs font-bold transition-all active:scale-95 ${
                 filter === tab
                   ? 'bg-gray-900 text-white border-gray-900 shadow-sm'
-                  : 'bg-white border-gray-200 text-gray-600 hover:border-gray-400'
+                  : 'bg-white border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900'
               }`}
             >
               {tab}
@@ -97,7 +98,7 @@ export function ProductCatalog({
             <p className="text-xs text-gray-500 mt-1">네트워크 상태를 확인하고 다시 시도해 주세요.</p>
             <button
               type="button"
-              className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 bg-gray-900 text-white rounded-lg text-xs font-bold hover:bg-gray-800 transition"
+              className="inline-flex items-center gap-1.5 mt-3 px-4 py-2 bg-gray-900 text-white rounded-lg text-xs font-bold hover:bg-gray-800 transition active:scale-95"
               onClick={() => setRetry(v => v + 1)}
             >
               <RefreshCw size={14} /> 다시 시도
@@ -120,27 +121,34 @@ export function ProductCatalog({
               key={item.id} 
               data-testid="product-card"
               data-product-id={item.id}
-              className="min-w-0 flex flex-col group cursor-pointer"
+              tabIndex={0}
+              role="button"
+              aria-label={`${item.brand || '명품 셀렉션'} ${item.title}`}
+              className="min-w-0 flex flex-col group cursor-pointer interactive-card rounded-2xl p-1 -m-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900"
             >
               {/* 상품 이미지 플레이스홀더 */}
-              <div className="aspect-square rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 mb-2.5 flex flex-col items-center justify-center gap-1.5 text-gray-400 group-hover:border-gray-300 transition relative overflow-hidden shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-white/80 shadow-inner flex items-center justify-center text-gray-600">
+              <div className="aspect-square rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 mb-2.5 flex flex-col items-center justify-center gap-1.5 text-gray-400 group-hover:border-gray-300 transition-all relative overflow-hidden shadow-2xs group-hover:shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-white/90 shadow-2xs flex items-center justify-center text-gray-600 transition-transform group-hover:scale-105">
                   <ShoppingBag size={22} strokeWidth={1.5} />
                 </div>
                 <span className="text-[10px] font-semibold tracking-wider text-gray-400">LUXURY</span>
-                <span className="absolute top-2 left-2 text-[10px] font-bold px-2 py-0.5 rounded-md bg-white/90 text-gray-700 shadow-xs border border-gray-100">
+                <span className={`absolute top-2 left-2 text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-2xs border ${
+                  item.type === 'RENT'
+                    ? 'bg-pink-50 text-pink-700 border-pink-200/80'
+                    : 'bg-blue-50 text-blue-700 border-blue-200/80'
+                }`}>
                   {item.type === 'RENT' ? '렌트' : '구매'}
                 </span>
               </div>
 
               {/* 상품 정보 */}
-              <p className="text-xs font-extrabold text-gray-900 tracking-tight">{item.brand || '명품 셀렉션'}</p>
-              <h4 className="text-xs text-gray-600 mt-0.5 leading-snug line-clamp-2 min-h-[32px] break-words">
+              <p className="text-xs font-black text-gray-900 tracking-tight">{item.brand || '명품 셀렉션'}</p>
+              <h4 className="text-xs text-gray-600 mt-0.5 leading-snug line-clamp-2 min-h-[32px] break-words font-medium group-hover:text-gray-900 transition-colors">
                 {item.title}
               </h4>
-              <p className="text-sm font-black text-gray-900 mt-1.5 tabular-nums">
+              <p className="text-sm font-black text-gray-950 mt-1.5 tabular-nums flex items-baseline">
                 {item.price === null ? '가격 문의' : `${item.price.toLocaleString('ko-KR')}원`}
-                <span className="font-normal text-[11px] text-gray-500 ml-1">
+                <span className="font-medium text-[11px] text-gray-500 ml-1">
                   {item.type === 'RENT' ? '/ 1일' : '· 구매'}
                 </span>
               </p>

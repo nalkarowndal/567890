@@ -54,7 +54,7 @@ export const ShopLike = () => {
           <button 
             type="button"
             onClick={() => showToast('[데모] 카카오 간편 로그인 연동 준비 중입니다.')}
-            className="w-full bg-[#FEE500] hover:bg-[#ebd300] text-black text-sm font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-xs transition active:scale-[0.99]"
+            className="w-full bg-[#FEE500] hover:bg-[#ebd300] text-black text-sm font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-2xs transition active:scale-[0.985]"
           >
             카카오로 3초만에 계속하기
           </button>
@@ -62,7 +62,7 @@ export const ShopLike = () => {
           <button 
             type="button"
             onClick={() => showToast('[데모] Apple ID 로그인 연동 준비 중입니다.')}
-            className="w-full bg-white hover:bg-gray-50 border border-gray-900 text-black text-sm font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-xs transition active:scale-[0.99]"
+            className="w-full bg-white hover:bg-gray-50 border border-gray-900 text-black text-sm font-extrabold py-3.5 rounded-xl flex items-center justify-center gap-2 shadow-2xs transition active:scale-[0.985]"
           >
             APPLE로 계속하기
           </button>
@@ -74,7 +74,7 @@ export const ShopLike = () => {
             type="button"
             aria-label="네이버로 로그인"
             onClick={() => showToast('[데모] 네이버 로그인 연동 준비 중입니다.')}
-            className="w-11 h-11 bg-[#03C75A] hover:opacity-90 rounded-full flex items-center justify-center text-white font-black text-lg shadow-xs transition active:scale-95"
+            className="w-11 h-11 bg-[#03C75A] hover:opacity-90 rounded-full flex items-center justify-center text-white font-black text-lg shadow-2xs transition active:scale-90"
           >
             N
           </button>
@@ -82,7 +82,7 @@ export const ShopLike = () => {
             type="button"
             aria-label="페이코로 로그인"
             onClick={() => showToast('[데모] 페이코 로그인 연동 준비 중입니다.')}
-            className="w-11 h-11 bg-[#EA3323] hover:opacity-90 rounded-full flex items-center justify-center text-white font-black text-lg shadow-xs transition active:scale-95"
+            className="w-11 h-11 bg-[#EA3323] hover:opacity-90 rounded-full flex items-center justify-center text-white font-black text-lg shadow-2xs transition active:scale-90"
           >
             P
           </button>
@@ -90,7 +90,7 @@ export const ShopLike = () => {
             type="button"
             aria-label="이메일로 로그인"
             onClick={() => showToast('[데모] 이메일 로그인 연동 준비 중입니다.')}
-            className="w-11 h-11 bg-[#4C51F7] hover:opacity-90 rounded-full flex items-center justify-center text-white shadow-xs transition active:scale-95"
+            className="w-11 h-11 bg-[#4C51F7] hover:opacity-90 rounded-full flex items-center justify-center text-white shadow-2xs transition active:scale-90"
           >
             <Mail size={20} />
           </button>

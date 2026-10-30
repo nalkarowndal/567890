@@ -215,16 +215,19 @@ export const ShopCategory = () => {
               {/* 선택된 하위 카테고리 실제 상품 결과 영역 */}
               {selectedSub && (
                 <div className="mt-6 pt-5 border-t border-gray-200">
-                  <div className="flex justify-between items-baseline mb-3">
-                    <h3 className="font-extrabold text-sm text-gray-900">
-                      '{selectedSub}' 등록 상품
-                    </h3>
+                  <div className="flex justify-between items-center mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-gray-900 inline-block" />
+                      <h3 className="font-extrabold text-sm text-gray-900">
+                        '{selectedSub}' 등록 상품
+                      </h3>
+                    </div>
                     <button
                       type="button"
                       onClick={() => setSelectedSub(null)}
-                      className="text-xs text-gray-500 underline hover:text-black"
+                      className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold px-2.5 py-1 rounded-lg transition active:scale-95"
                     >
-                      필터 초기화
+                      필터 초기화 ✕
                     </button>
                   </div>
                   <ProductCatalog keyword={selectedSub} />
@@ -239,8 +242,13 @@ export const ShopCategory = () => {
       {mainTab === 'BRAND' && (
         <div className="flex-1 overflow-y-auto p-4 sm:p-5 scrollbar-hide">
           <div className="flex justify-between items-baseline mb-4">
-            <h2 className="font-extrabold text-lg text-gray-950">브랜드별 상품</h2>
-            <span className="text-xs text-gray-500 font-semibold">선택: {activeBrand}</span>
+            <div>
+              <h2 className="font-extrabold text-lg text-gray-950">브랜드별 상품</h2>
+              <p className="text-xs text-gray-500 mt-0.5">선택한 프리미엄 브랜드의 렌탈·구매 라인업</p>
+            </div>
+            <span className="text-xs text-gray-700 font-bold bg-gray-100 px-2.5 py-1 rounded-full border border-gray-200">
+              {activeBrand}
+            </span>
           </div>
           
           <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-3 mb-6" role="tablist" aria-label="브랜드 선택">
@@ -251,17 +259,17 @@ export const ShopCategory = () => {
                 aria-selected={activeBrand === brand.name} 
                 key={i} 
                 onClick={() => setActiveBrand(brand.name)} 
-                className="flex flex-col items-center gap-1.5 shrink-0 min-w-[62px] group"
+                className="flex flex-col items-center gap-1.5 shrink-0 min-w-[62px] group transition-transform active:scale-95"
               >
                 <div className={`w-14 h-14 rounded-full flex items-center justify-center text-2xl transition-all shadow-xs ${
                   activeBrand === brand.name 
-                    ? 'border-2 border-gray-900 bg-gray-900 text-white scale-105' 
-                    : 'bg-gray-100 border border-gray-200 group-hover:bg-gray-200'
+                    ? 'border-2 border-gray-900 bg-gray-900 text-white scale-105 shadow-md' 
+                    : 'bg-gray-50 border border-gray-200 group-hover:bg-gray-100'
                 }`}>
                   {brand.icon}
                 </div>
                 <span className={`text-[11px] font-bold transition-colors ${
-                  activeBrand === brand.name ? 'text-gray-950' : 'text-gray-600'
+                  activeBrand === brand.name ? 'text-gray-950 font-black' : 'text-gray-600'
                 }`}>
                   {brand.name}
                 </span>
