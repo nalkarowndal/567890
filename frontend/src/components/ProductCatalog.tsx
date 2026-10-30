@@ -116,7 +116,12 @@ export function ProductCatalog({
       {state === 'success' && visible.length > 0 && (
         <ul className="grid grid-cols-2 gap-x-3.5 gap-y-6">
           {visible.slice(0, rentalOnly ? 4 : 12).map(item => (
-            <li key={item.id} className="min-w-0 flex flex-col group cursor-pointer">
+            <li 
+              key={item.id} 
+              data-testid="product-card"
+              data-product-id={item.id}
+              className="min-w-0 flex flex-col group cursor-pointer"
+            >
               {/* 상품 이미지 플레이스홀더 */}
               <div className="aspect-square rounded-2xl bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-100 mb-2.5 flex flex-col items-center justify-center gap-1.5 text-gray-400 group-hover:border-gray-300 transition relative overflow-hidden shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-white/80 shadow-inner flex items-center justify-center text-gray-600">

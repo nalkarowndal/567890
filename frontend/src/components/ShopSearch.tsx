@@ -182,6 +182,8 @@ export const ShopSearch = () => {
                   {results.map((item, index) => (
                     <li 
                       key={`${item.id}-${index}`} 
+                      data-testid="search-result-item"
+                      data-product-id={item.id}
                       className="rounded-2xl border border-gray-100 p-4 hover:border-gray-300 transition flex items-center justify-between gap-3 shadow-xs bg-white"
                     >
                       <div className="flex items-center gap-3 min-w-0">
