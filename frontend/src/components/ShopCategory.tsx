@@ -85,7 +85,7 @@ export const ShopCategory = () => {
           aria-selected={mainTab === 'CATEGORY'}
           onClick={() => setMainTab('CATEGORY')}
           className={`flex-1 py-3 text-[15px] font-bold text-center border-b-2 transition ${
-            mainTab === 'CATEGORY' ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-400 hover:text-gray-600'
+            mainTab === 'CATEGORY' ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
           카테고리
@@ -96,7 +96,7 @@ export const ShopCategory = () => {
           aria-selected={mainTab === 'BRAND'}
           onClick={() => setMainTab('BRAND')}
           className={`flex-1 py-3 text-[15px] font-bold text-center border-b-2 transition ${
-            mainTab === 'BRAND' ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-400 hover:text-gray-600'
+            mainTab === 'BRAND' ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-500 hover:text-gray-700'
           }`}
         >
           브랜드
@@ -116,7 +116,7 @@ export const ShopCategory = () => {
                 aria-selected={subTab === tab}
                 onClick={() => { setSubTab(tab); setSelectedSub(null); }}
                 className={`py-3 mr-6 text-sm font-bold border-b-2 transition ${
-                  subTab === tab ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-400 hover:text-gray-600'
+                  subTab === tab ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-500 hover:text-gray-700'
                 }`}
               >
                 {tab}

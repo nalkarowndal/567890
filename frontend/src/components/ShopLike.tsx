@@ -31,7 +31,7 @@ export const ShopLike = () => {
         >
           <ChevronLeft size={24} className="text-gray-900" />
         </button>
-        <span className="text-xs text-gray-400 font-bold pr-3">로그인 / 회원가입</span>
+        <span className="text-xs text-gray-600 font-bold pr-3">로그인 / 회원가입</span>
       </header>
 
       {/* 로그인 본문 영역 */}

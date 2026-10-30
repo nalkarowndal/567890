@@ -242,7 +242,7 @@ export const ShopSearch = () => {
             {/* 인기 브랜드 */}
             <div className="flex justify-between items-baseline mb-4">
               <h3 className="font-extrabold text-[15px] text-gray-900">인기 브랜드</h3>
-              <span className="text-[11px] text-gray-400">실시간 검색 랭킹 예시</span>
+              <span className="text-[11px] text-gray-500 font-medium">실시간 검색 랭킹 예시</span>
             </div>
             
             <div className="flex gap-4">

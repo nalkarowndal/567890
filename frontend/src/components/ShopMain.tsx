@@ -99,7 +99,7 @@ export const ShopMain = () => {
       {/* 2. 상단 로그인 인사말 & 간편 로그인 */}
       <section aria-label="로그인 안내 및 서비스 선택" className="p-5 bg-white mb-2 shadow-xs">
         <h2 className="text-xl font-bold text-gray-900 leading-snug mb-4">
-          어서오세요, <span className="text-orange-500">로그인</span> 후<br/>럭셔리렌탈을 이용해보세요
+          어서오세요, <span className="text-orange-600">로그인</span> 후<br/>럭셔리렌탈을 이용해보세요
         </h2>
         
         <button 
@@ -119,7 +119,7 @@ export const ShopMain = () => {
               className="bg-pink-50/70 hover:bg-pink-50 border border-pink-100/80 p-4 rounded-2xl flex flex-col justify-between text-left transition active:scale-[0.98] shadow-xs min-h-[140px]"
             >
               <div>
-                <span className="text-[11px] bg-pink-500 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
+                <span className="text-[11px] bg-pink-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
                   첫 렌트 70% 할인
                 </span>
                 <h3 className="font-black text-gray-900 text-base">렌트하기</h3>
@@ -134,7 +134,7 @@ export const ShopMain = () => {
               className="bg-blue-50/70 hover:bg-blue-50 border border-blue-100/80 p-4 rounded-2xl flex flex-col justify-between text-left transition active:scale-[0.98] shadow-xs min-h-[140px]"
             >
               <div>
-                <span className="text-[11px] bg-blue-500 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
+                <span className="text-[11px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2">
                   정품 보증
                 </span>
                 <h3 className="font-black text-gray-900 text-base">구매하기</h3>
@@ -150,7 +150,7 @@ export const ShopMain = () => {
             className="w-full bg-green-50/70 hover:bg-green-50 border border-green-100/80 p-4 rounded-2xl flex justify-between items-center text-left transition active:scale-[0.99] shadow-xs"
           >
             <div>
-              <span className="text-[11px] bg-green-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-1.5">
+              <span className="text-[11px] bg-green-700 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-1.5">
                 간편 위탁
               </span>
               <h3 className="font-black text-gray-900 text-base">판매하기</h3>

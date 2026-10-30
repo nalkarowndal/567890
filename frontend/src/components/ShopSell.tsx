@@ -107,13 +107,12 @@ export const ShopSell = () => {
         {/* 5. 브랜드 리스트 */}
         <div className="border-t border-gray-100 pt-1">
           {filtered.length > 0 ? (
-            <ul className="divide-y divide-gray-50" role="listbox" aria-label="브랜드 선택 목록">
+            <ul className="divide-y divide-gray-50" aria-label="브랜드 선택 목록">
               {filtered.map((brand, idx) => (
                 <li key={idx}>
                   <button
                     type="button"
-                    role="option"
-                    aria-selected={selectedBrand === brand.ko}
+                    aria-pressed={selectedBrand === brand.ko}
                     onClick={() => handleSelectBrand(brand.ko)}
                     className={`w-full flex justify-between items-center py-3.5 px-2 rounded-xl text-left transition ${
                       selectedBrand === brand.ko 
@@ -122,9 +121,9 @@ export const ShopSell = () => {
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="font-extrabold text-[15px] text-gray-950">{brand.ko}</span>
+                      <span className="text-extrabold text-[15px] text-gray-950 font-extrabold">{brand.ko}</span>
                       <span className="text-gray-300 font-light text-[13px]">|</span>
-                      <span className="text-gray-400 text-[14px] font-medium">{brand.en}</span>
+                      <span className="text-gray-500 text-[14px] font-medium">{brand.en}</span>
                     </div>
                     <ChevronRight size={16} className="text-gray-300" aria-hidden="true" />
                   </button>
