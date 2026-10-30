@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56" fill="none">
+  <defs>
+    <linearGradient id="eventBoxGrad" x1="12" y1="18" x2="44" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <linearGradient id="eventLidGrad" x1="10" y1="16" x2="46" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="eventGoldRibbon" x1="16" y1="8" x2="40" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="45%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <radialGradient id="eventGlowAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#818CF8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#312E81" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="eventDropShadow" x="6" y="6" width="44" height="46" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glowing Aura -->
+  <circle cx="28" cy="28" r="26" fill="url(#eventGlowAura)"/>
+
+  <g filter="url(#eventDropShadow)">
+    <!-- Box Body -->
+    <path d="M14 26 L42 26 L40 48 C40 50 38 51 36 51 L20 51 C18 51 16 50 16 48 Z" fill="url(#eventBoxGrad)"/>
+    <!-- Vertical Ribbon on Body -->
+    <rect x="25.5" y="26" width="5" height="25" fill="url(#eventGoldRibbon)"/>
+
+    <!-- Box Lid -->
+    <rect x="11" y="20" width="34" height="8" rx="2" fill="url(#eventLidGrad)"/>
+    <!-- Horizontal Ribbon on Lid -->
+    <rect x="11" y="22.5" width="34" height="3" fill="url(#eventGoldRibbon)"/>
+    <!-- Vertical Ribbon on Lid -->
+    <rect x="25.5" y="20" width="5" height="8" fill="url(#eventGoldRibbon)"/>
+
+    <!-- Gold Bow Loops -->
+    <!-- Left loop -->
+    <path d="M28 19 C23 12 14 15 18 20 C21 22 26 21 28 20 Z" fill="url(#eventGoldRibbon)"/>
+    <path d="M26 18 C22 13 16 15 19 19 Z" fill="#FEF08A" opacity="0.6"/>
+    <!-- Right loop -->
+    <path d="M28 19 C33 12 42 15 38 20 C35 22 30 21 28 20 Z" fill="url(#eventGoldRibbon)"/>
+    <path d="M30 18 C34 13 40 15 37 19 Z" fill="#FEF08A" opacity="0.6"/>
+    <!-- Center knot -->
+    <circle cx="28" cy="19.5" r="2.8" fill="#F59E0B"/>
+    <circle cx="28" cy="19.5" r="1.5" fill="#FEF08A"/>
+  </g>
+
+  <!-- Starburst Accents -->
+  <path d="M43 12 L44.5 15 L47.5 16.5 L44.5 18 L43 21 L41.5 18 L38.5 16.5 L41.5 15 Z" fill="#FDE047"/>
+  <circle cx="12" cy="36" r="1.5" fill="#FDE047"/>
+  <circle cx="45" cy="42" r="1.2" fill="#E0E7FF"/>
+</svg>

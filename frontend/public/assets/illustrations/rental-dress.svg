@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <defs>
+    <linearGradient id="dressHangerGrad" x1="28" y1="12" x2="52" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="dressFabricGrad" x1="30" y1="20" x2="50" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="30%" stop-color="#FB7185"/>
+      <stop offset="70%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+    <linearGradient id="dressFoldGrad" x1="36" y1="36" x2="44" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDA4AF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#9F1239" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="dressGlow" x="10" y="8" width="60" height="68" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#E11D48" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Soft Radial Aura -->
+  <circle cx="40" cy="42" r="30" fill="#FFE4E6" fill-opacity="0.5"/>
+
+  <!-- Hanger Hook & Bar -->
+  <g filter="url(#dressGlow)">
+    <path d="M40 10 C38 10 36 12 36 14 C36 17 40 18 40 21" stroke="url(#dressHangerGrad)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M26 25 L40 21 L54 25" stroke="url(#dressHangerGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="40" cy="21" r="1.5" fill="#F59E0B"/>
+  </g>
+
+  <!-- Dress Body -->
+  <g filter="url(#dressGlow)">
+    <!-- Top Bodice -->
+    <path d="M33 24 L36 36 C38 37 42 37 44 36 L47 24 C44 26 36 26 33 24 Z" fill="url(#dressFabricGrad)"/>
+    
+    <!-- Waistband / Belt -->
+    <rect x="35" y="36" width="10" height="3" rx="1.5" fill="#FCD34D"/>
+    <circle cx="40" cy="37.5" r="1.5" fill="#FFFBEB"/>
+
+    <!-- Flowing Flared Skirt -->
+    <path d="M35 39 C34 46 22 62 20 68 C23 70 32 72 40 72 C48 72 57 70 60 68 C58 62 46 46 45 39 Z" fill="url(#dressFabricGrad)"/>
+    
+    <!-- Fabric Draping Folds -->
+    <path d="M40 39 Q38 55 36 71.5" stroke="url(#dressFoldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M40 39 Q43 55 45 71.5" stroke="url(#dressFoldGrad)" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M37 45 Q31 56 28 69" stroke="#9F1239" stroke-opacity="0.3" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M43 45 Q49 56 52 69" stroke="#9F1239" stroke-opacity="0.3" stroke-width="1.4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Couture Sparkle Accents -->
+  <path d="M57 20 L58.5 24 L62.5 25.5 L58.5 27 L57 31 L55.5 27 L51.5 25.5 L55.5 24 Z" fill="#F59E0B" opacity="0.9"/>
+  <circle cx="23" cy="34" r="1.5" fill="#FB7185"/>
+  <circle cx="58" cy="50" r="1.2" fill="#FCD34D"/>
+</svg>

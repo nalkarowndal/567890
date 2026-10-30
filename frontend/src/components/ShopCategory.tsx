@@ -153,10 +153,16 @@ export const ShopCategory = () => {
                   onClick={() => showToast(`[안내] ${subTab} 추천 상품 모음이 준비 중입니다.`)}
                   className="flex flex-col items-center gap-1.5 w-1/3 text-center group"
                 >
-                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center text-3xl shadow-xs transition">
-                    👞
+                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center p-3 shadow-xs transition group-hover:shadow-sm">
+                    <img 
+                      src="/assets/curation/curation-shoes.svg" 
+                      alt="" 
+                      width="44" 
+                      height="44" 
+                      className="w-11 h-11 object-contain transition-transform group-hover:scale-105" 
+                    />
                   </div>
-                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight">
+                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight group-hover:text-gray-950">
                     {subTab} 추천 스니커즈
                   </span>
                 </button>
@@ -166,10 +172,16 @@ export const ShopCategory = () => {
                   onClick={() => showToast(`[안내] ${subTab} 베스트셀러 상품 모음이 준비 중입니다.`)}
                   className="flex flex-col items-center gap-1.5 w-1/3 text-center group"
                 >
-                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center text-3xl shadow-xs transition">
-                    💍
+                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center p-3 shadow-xs transition group-hover:shadow-sm">
+                    <img 
+                      src="/assets/curation/curation-jewelry.svg" 
+                      alt="" 
+                      width="44" 
+                      height="44" 
+                      className="w-11 h-11 object-contain transition-transform group-hover:scale-105" 
+                    />
                   </div>
-                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight">
+                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight group-hover:text-gray-950">
                     {subTab} 베스트셀러
                   </span>
                 </button>
@@ -179,10 +191,16 @@ export const ShopCategory = () => {
                   onClick={() => showToast(`[안내] ${subTab} ${leftActive} 신규 아이템 모음이 준비 중입니다.`)}
                   className="flex flex-col items-center gap-1.5 w-1/3 text-center group"
                 >
-                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center text-3xl shadow-xs transition">
-                    🧥
+                  <div className="bg-gray-50 group-hover:bg-gray-100 border border-gray-100 rounded-2xl aspect-square w-full flex items-center justify-center p-3 shadow-xs transition group-hover:shadow-sm">
+                    <img 
+                      src="/assets/curation/curation-coat.svg" 
+                      alt="" 
+                      width="44" 
+                      height="44" 
+                      className="w-11 h-11 object-contain transition-transform group-hover:scale-105" 
+                    />
                   </div>
-                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight">
+                  <span className="text-[11px] text-center font-bold text-gray-800 break-keep leading-tight group-hover:text-gray-950">
                     {subTab} 시즌 컬렉션
                   </span>
                 </button>

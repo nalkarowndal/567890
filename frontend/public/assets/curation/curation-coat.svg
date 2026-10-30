@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="curCoatCamel" x1="16" y1="12" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="40%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <linearGradient id="curCoatLapel" x1="22" y1="12" x2="42" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="curCoatDrop" x="10" y="8" width="44" height="52" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#78350F" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#curCoatDrop)">
+    <!-- Coat Body Outline -->
+    <path d="M22 13 L28 15 L36 15 L42 13 L47 24 L42 27 L44 52 C44 53 43 54 41 54 L23 54 C21 54 20 53 20 52 L22 27 L17 24 Z" fill="url(#curCoatCamel)"/>
+    
+    <!-- Trench Coat Lapels -->
+    <path d="M28 15 L32 28 L23 20 Z" fill="url(#curCoatLapel)"/>
+    <path d="M36 15 L32 28 L41 20 Z" fill="url(#curCoatLapel)"/>
+
+    <!-- Double Breasted Buttons -->
+    <circle cx="28" cy="33" r="1.5" fill="#FDE68A"/>
+    <circle cx="36" cy="33" r="1.5" fill="#FDE68A"/>
+    <circle cx="28" cy="40" r="1.5" fill="#FDE68A"/>
+    <circle cx="36" cy="40" r="1.5" fill="#FDE68A"/>
+
+    <!-- Trench Coat Belt with Buckle -->
+    <rect x="21" y="35" width="22" height="3" rx="1.5" fill="#92400E"/>
+    <rect x="29" y="34" width="6" height="5" rx="1.5" stroke="#FDE68A" stroke-width="1.2" fill="none"/>
+  </g>
+
+  <!-- Sparkle Accent -->
+  <path d="M47 12 L48.5 15 L51.5 16.5 L48.5 18 L47 21 L45.5 18 L42.5 16.5 L45.5 15 Z" fill="#F59E0B"/>
+</svg>

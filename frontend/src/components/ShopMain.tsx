@@ -117,7 +117,7 @@ export const ShopMain = () => {
             <button
               type="button"
               onClick={() => setActiveOverlay('LOGIN')}
-              className="bg-pink-50/70 hover:bg-pink-50/90 border border-pink-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[144px]"
+              className="bg-pink-50/70 hover:bg-pink-50/90 border border-pink-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[148px] group"
             >
               <div>
                 <span className="text-[11px] bg-pink-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2 shadow-2xs">
@@ -126,13 +126,21 @@ export const ShopMain = () => {
                 <h3 className="font-black text-gray-900 text-base">렌트하기</h3>
                 <p className="text-xs text-gray-500 mt-1 leading-snug">특별한 날,<br/>마음껏 렌트하기</p>
               </div>
-              <div className="text-right text-2xl mt-2 select-none" aria-hidden="true">👗</div>
+              <div className="flex justify-end mt-1">
+                <img 
+                  src="/assets/illustrations/rental-dress.svg" 
+                  alt="렌트 드레스 일러스트" 
+                  width="56" 
+                  height="56" 
+                  className="w-14 h-14 object-contain transition-transform group-hover:scale-105 group-hover:-translate-y-0.5" 
+                />
+              </div>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveOverlay('LOGIN')}
-              className="bg-blue-50/70 hover:bg-blue-50/90 border border-blue-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[144px]"
+              className="bg-blue-50/70 hover:bg-blue-50/90 border border-blue-100/90 p-4 rounded-2xl flex flex-col justify-between text-left transition-all interactive-card shadow-xs min-h-[148px] group"
             >
               <div>
                 <span className="text-[11px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-2 shadow-2xs">
@@ -141,14 +149,22 @@ export const ShopMain = () => {
                 <h3 className="font-black text-gray-900 text-base">구매하기</h3>
                 <p className="text-xs text-gray-500 mt-1 leading-snug">내 마음에 쏙,<br/>지금 바로 구매하기</p>
               </div>
-              <div className="text-right text-2xl mt-2 select-none" aria-hidden="true">👜</div>
+              <div className="flex justify-end mt-1">
+                <img 
+                  src="/assets/illustrations/purchase-handbag.svg" 
+                  alt="구매 가방 일러스트" 
+                  width="56" 
+                  height="56" 
+                  className="w-14 h-14 object-contain transition-transform group-hover:scale-105 group-hover:-translate-y-0.5" 
+                />
+              </div>
             </button>
           </div>
 
           <button
             type="button"
             onClick={() => setCurrentView('SHOP_SELL')}
-            className="w-full bg-green-50/70 hover:bg-green-50/90 border border-green-100/90 p-4 rounded-2xl flex justify-between items-center text-left transition-all interactive-card shadow-xs"
+            className="w-full bg-green-50/70 hover:bg-green-50/90 border border-green-100/90 p-4 rounded-2xl flex justify-between items-center text-left transition-all interactive-card shadow-xs group"
           >
             <div>
               <span className="text-[11px] bg-green-700 text-white font-bold px-2 py-0.5 rounded-md inline-block mb-1.5 shadow-2xs">
@@ -157,7 +173,15 @@ export const ShopMain = () => {
               <h3 className="font-black text-gray-900 text-base">판매하기</h3>
               <p className="text-xs text-gray-500 mt-0.5">내 명품, 쉽고 빠르게 판매하기</p>
             </div>
-            <div className="text-3xl pr-1 select-none" aria-hidden="true">🤝</div>
+            <div className="pr-1 shrink-0">
+              <img 
+                src="/assets/illustrations/sell-box.svg" 
+                alt="위탁 판매 패키지 일러스트" 
+                width="52" 
+                height="52" 
+                className="w-13 h-13 object-contain transition-transform group-hover:scale-105 group-hover:-translate-y-0.5" 
+              />
+            </div>
           </button>
         </div>
 
@@ -165,15 +189,15 @@ export const ShopMain = () => {
         <button
           type="button"
           onClick={() => setActiveOverlay('LOGIN')}
-          className="w-full bg-gradient-to-r from-gray-900 via-gray-950 to-indigo-950 text-white p-5 rounded-2xl flex justify-between items-center shadow-md mb-6 text-left transition-all hover:shadow-lg interactive-card"
+          className="w-full bg-gradient-to-r from-gray-900 via-gray-950 to-indigo-950 text-white p-5 rounded-2xl flex justify-between items-center shadow-md mb-6 text-left transition-all hover:shadow-lg interactive-card group"
         >
           <div>
             <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded font-bold tracking-wider backdrop-blur-xs">EVENT</span>
             <h3 className="font-extrabold text-lg mt-1 tracking-tight">회원가입 이벤트</h3>
             <p className="text-xs text-gray-300 mt-0.5">간단하게 가입하고 가볍게 쇼핑!</p>
           </div>
-          <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-sm shadow-inner" aria-hidden="true">
-            🎁
+          <div className="w-13 h-13 bg-white/10 rounded-2xl flex items-center justify-center shadow-inner p-1 shrink-0 backdrop-blur-xs group-hover:scale-105 transition-transform" aria-hidden="true">
+            <img src="/assets/banners/signup-event.svg" alt="회원가입 이벤트 선물" width="48" height="48" className="w-11 h-11 object-contain" />
           </div>
         </button>
 
@@ -202,25 +226,31 @@ export const ShopMain = () => {
         {/* 8-Grid 아이콘 메뉴 */}
         <div className="grid grid-cols-4 gap-y-5 gap-x-2 text-center bg-white rounded-2xl shadow-xs border border-gray-100 p-4">
           {[
-            { icon: '👗', title: '렌트 소개' },
-            { icon: '🏷️', title: '70% 할인' },
-            { icon: '⏰', title: '오늘신규입고' },
-            { icon: '👆', title: '베이직멤버십' },
-            { icon: '🤲', title: '렌트잇 케어' },
-            { icon: '👑', title: 'VIP' },
-            { icon: '💼', title: '바이백' },
-            { icon: '💌', title: '친구 초대' }
+            { iconUrl: '/assets/shortcuts/rental-guide.svg', title: '렌트 소개' },
+            { iconUrl: '/assets/shortcuts/discount.svg', title: '70% 할인' },
+            { iconUrl: '/assets/shortcuts/new-arrival.svg', title: '오늘신규입고' },
+            { iconUrl: '/assets/shortcuts/membership.svg', title: '베이직멤버십' },
+            { iconUrl: '/assets/shortcuts/rental-care.svg', title: '렌트잇 케어' },
+            { iconUrl: '/assets/shortcuts/vip.svg', title: 'VIP' },
+            { iconUrl: '/assets/shortcuts/buyback.svg', title: '바이백' },
+            { iconUrl: '/assets/shortcuts/invite.svg', title: '친구 초대' }
           ].map((menu, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => showToast(`[안내] '${menu.title}' 상세 페이지가 준비 중입니다.`)}
-              className="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-gray-50/80 transition active:scale-95"
+              className="flex flex-col items-center gap-1.5 p-1 rounded-xl hover:bg-gray-50/80 transition active:scale-95 group"
             >
-              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-xl shadow-2xs border border-gray-100/60">
-                {menu.icon}
+              <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center p-2 shadow-2xs border border-gray-100/80 group-hover:bg-white group-hover:border-gray-200 transition-all">
+                <img 
+                  src={menu.iconUrl} 
+                  alt="" 
+                  width="32" 
+                  height="32" 
+                  className="w-8 h-8 object-contain transition-transform group-hover:scale-110" 
+                />
               </div>
-              <span className="text-[11px] font-bold text-gray-800 tracking-tight">{menu.title}</span>
+              <span className="text-[11px] font-bold text-gray-800 tracking-tight group-hover:text-gray-950">{menu.title}</span>
             </button>
           ))}
         </div>

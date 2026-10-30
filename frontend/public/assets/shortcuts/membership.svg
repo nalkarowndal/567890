@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <defs>
+    <linearGradient id="scCardBlack" x1="10" y1="14" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="50%" stop-color="#1F2937"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="scCardGold" x1="12" y1="12" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="scCardDrop" x="6" y="8" width="36" height="34" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#scCardDrop)">
+    <!-- Main Card Body -->
+    <rect x="9" y="14" width="30" height="20" rx="3.5" fill="url(#scCardBlack)" stroke="url(#scCardGold)" stroke-width="1.2"/>
+    
+    <!-- Gold Metallic Chip -->
+    <rect x="13" y="19" width="6" height="5" rx="1.2" fill="url(#scCardGold)"/>
+    <line x1="16" y1="19" x2="16" y2="24" stroke="#78350F" stroke-width="0.6"/>
+
+    <!-- Contactless Wave / Luxury Lines -->
+    <path d="M22 20.5 Q23.5 21.5 22 22.5" stroke="#9CA3AF" stroke-width="0.8" stroke-linecap="round"/>
+    <path d="M24 19.5 Q26 21.5 24 23.5" stroke="#9CA3AF" stroke-width="0.8" stroke-linecap="round"/>
+
+    <!-- Embossed Cardholder Line -->
+    <rect x="13" y="28" width="14" height="1.8" rx="0.9" fill="#9CA3AF" opacity="0.6"/>
+    <!-- Gold VIP Monogram Seal -->
+    <circle cx="33" cy="27" r="3.2" fill="url(#scCardGold)"/>
+    <circle cx="33" cy="27" r="2.2" fill="#111827"/>
+  </g>
+
+  <!-- Sparkle Accent -->
+  <path d="M37 11 L38 13 L40 14 L38 15 L37 17 L36 15 L34 14 L36 13 Z" fill="#F59E0B"/>
+</svg>
