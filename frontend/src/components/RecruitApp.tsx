@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { 
-  LayoutDashboard, Send, Upload, FileText, PlusCircle, Users, MessageSquare, ShieldCheck
+  Send, Upload, FileText
 } from 'lucide-react';
 
 export const RecruitApp = () => {
-  const [role, setRole] = useState<'STORE' | 'ADMIN'>('STORE');
+  const [role] = useState<'STORE' | 'ADMIN'>('STORE');
   const [activeTab, setActiveTab] = useState<'dashboard' | 'request' | 'workers' | 'chat'>('dashboard');
 
   // 상태 데이터
@@ -13,7 +13,7 @@ export const RecruitApp = () => {
     { id: 2, storeName: '홍대점', date: '2026-11-01', section: '카운터', time: '12:00 - 20:00', breakTime: '60분', required: 1, hired: 0, status: '채용중' as const, partner: '김지인' }
   ]);
 
-  const [workers, setWorkers] = useState([
+  const [workers] = useState([
     { id: 1, name: '김철수', phone: '010-1234-5678', exp: '홀 서빙 1년' },
     { id: 2, name: '이영희', phone: '010-8765-4321', exp: '카운터 2년' }
   ]);

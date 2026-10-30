@@ -3,10 +3,10 @@ import * as R from '../css/RentalStore.styles';
 
 //Mock Data
 const products = [
-    {id:1, brand:'샤넬', name:'클래식 플랙백', price:'\50,000/일'},
-    {id:2, brand:'에르메스', name:'버킨 25', price:'\50,000/일'},
-    {id:3, brand:'구찌', name:'홀스빗 1955', price:'\50,000/일'},
-    {id:4, brand:'디올', name:'데이디 디올', price:'\50,000/일'},
+    {id:1, brand:'샤넬', name:'클래식 플랙백', price:'₩50,000/일'},
+    {id:2, brand:'에르메스', name:'버킨 25', price:'₩50,000/일'},
+    {id:3, brand:'구찌', name:'홀스빗 1955', price:'₩50,000/일'},
+    {id:4, brand:'디올', name:'데이디 디올', price:'₩50,000/일'},
 ]
 
 export const RentalStore:React.FC = () => {

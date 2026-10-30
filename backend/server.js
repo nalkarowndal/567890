@@ -24,11 +24,11 @@ app.get('/api/health', (req, res) => {
 // 상품 목록 예시 라우트
 app.get('/api/products', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT * FROM products');
+    const [rows] = await db.query('SELECT id, title, brand, type, price FROM products ORDER BY id DESC');
     res.json(rows);
   } catch (error) {
     console.error('상품 목록 조회 오류:', error.message);
-    res.status(500).json({ message: '데이터베이스 조회 중 오류가 발생했습니다.', error: error.message });
+    res.status(500).json({ message: '상품 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.' });
   }
 });
 
