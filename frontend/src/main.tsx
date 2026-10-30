@@ -70,14 +70,16 @@ const MainRouter = () => {
     <div className="min-h-screen bg-gray-100 flex justify-center items-center font-sans text-gray-900">
       <div className="shop-shell w-full max-w-md h-dvh sm:h-[90dvh] bg-white relative flex flex-col overflow-hidden shadow-2xl sm:rounded-2xl">
         
-        {/* 토스트 알림 안내 바 */}
+        {/* 토스트 알림 안내 바 (상단 헤더 및 뒤로가기 버튼 간섭 방지를 위해 하단 배치) */}
         {toastMessage && (
           <div
             role="alert"
             aria-live="polite"
-            className="absolute top-4 left-4 right-4 z-[120] bg-gray-900/90 backdrop-blur-md text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-lg text-center animate-fadeIn"
+            className="absolute bottom-20 left-4 right-4 z-[130] pointer-events-none flex justify-center"
           >
-            {toastMessage}
+            <div className="bg-gray-950/90 backdrop-blur-md text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-2xl text-center pointer-events-auto border border-white/10 animate-fadeIn max-w-sm">
+              {toastMessage}
+            </div>
           </div>
         )}
 

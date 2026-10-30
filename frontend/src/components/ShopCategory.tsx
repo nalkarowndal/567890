@@ -9,6 +9,7 @@ export const ShopCategory = () => {
   const [subTab, setSubTab] = useState<'여성' | '남성' | '아동'>('여성');
   const [leftActive, setLeftActive] = useState('가방/핸드백');
   const [activeBrand, setActiveBrand] = useState('루이비통');
+  const [selectedSub, setSelectedSub] = useState<string | null>(null);
 
   const leftCategories = [
     '가방/핸드백', '의류', '슈즈', '지갑', 
@@ -113,7 +114,7 @@ export const ShopCategory = () => {
                 key={tab} 
                 role="tab"
                 aria-selected={subTab === tab}
-                onClick={() => setSubTab(tab)}
+                onClick={() => { setSubTab(tab); setSelectedSub(null); }}
                 className={`py-3 mr-6 text-sm font-bold border-b-2 transition ${
                   subTab === tab ? 'border-gray-900 text-gray-950' : 'border-transparent text-gray-400 hover:text-gray-600'
                 }`}
@@ -131,7 +132,7 @@ export const ShopCategory = () => {
                   type="button"
                   key={cat} 
                   aria-pressed={leftActive === cat}
-                  onClick={() => setLeftActive(cat)}
+                  onClick={() => { setLeftActive(cat); setSelectedSub(null); }}
                   className={`w-full text-left px-3.5 py-3.5 text-[13px] transition ${
                     leftActive === cat 
                       ? 'bg-white font-black text-gray-950 border-l-2 border-gray-900 shadow-xs' 
@@ -189,18 +190,46 @@ export const ShopCategory = () => {
 
               {/* 하위 카테고리 목록 */}
               <div className="border-t border-gray-100 pt-1">
-                {rightSubCategories.map((sub, idx) => (
-                  <button
-                    type="button"
-                    key={idx} 
-                    onClick={() => showToast(`[안내] '${subTab} > ${leftActive} > ${sub}' 필터가 적용되었습니다.`)}
-                    className="w-full flex justify-between items-center py-3.5 px-1 border-b border-gray-50 hover:bg-gray-50 rounded-lg text-left transition"
-                  >
-                    <span className="text-[13px] text-gray-800 font-semibold">{sub}</span>
-                    <ChevronRight size={16} className="text-gray-400" aria-hidden="true" />
-                  </button>
-                ))}
+                {rightSubCategories.map((sub, idx) => {
+                  const isSelected = selectedSub === sub || (sub === '전체' && selectedSub === null);
+                  return (
+                    <button
+                      type="button"
+                      key={idx} 
+                      onClick={() => {
+                        const target = sub === '전체' ? null : sub;
+                        setSelectedSub(target);
+                        showToast(`[카테고리] '${subTab} > ${leftActive} > ${sub}' 상품 목록을 탐색합니다.`);
+                      }}
+                      className={`w-full flex justify-between items-center py-3.5 px-2 border-b border-gray-50 rounded-lg text-left transition ${
+                        isSelected ? 'bg-gray-100/80 font-bold text-gray-950' : 'hover:bg-gray-50 text-gray-800'
+                      }`}
+                    >
+                      <span className="text-[13px] font-semibold">{sub}</span>
+                      <ChevronRight size={16} className={isSelected ? 'text-gray-900' : 'text-gray-400'} aria-hidden="true" />
+                    </button>
+                  );
+                })}
               </div>
+
+              {/* 선택된 하위 카테고리 실제 상품 결과 영역 */}
+              {selectedSub && (
+                <div className="mt-6 pt-5 border-t border-gray-200">
+                  <div className="flex justify-between items-baseline mb-3">
+                    <h3 className="font-extrabold text-sm text-gray-900">
+                      '{selectedSub}' 등록 상품
+                    </h3>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSub(null)}
+                      className="text-xs text-gray-500 underline hover:text-black"
+                    >
+                      필터 초기화
+                    </button>
+                  </div>
+                  <ProductCatalog keyword={selectedSub} />
+                </div>
+              )}
             </div>
           </div>
         </div>

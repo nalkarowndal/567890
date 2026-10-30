@@ -34,7 +34,7 @@ export const ShopSell = () => {
 
   const handleSelectBrand = (brandName: string) => {
     setSelectedBrand(brandName);
-    showToast(`[안내] '${brandName}' 판매 위탁 신청서 작성이 준비 중입니다.`);
+    showToast(`[데모 안내] '${brandName}' 판매 위탁 신청서 작성 페이지는 준비 중입니다.`);
   };
 
   return (
@@ -95,7 +95,7 @@ export const ShopSell = () => {
         <div className="flex justify-center mb-5">
           <button 
             type="button"
-            onClick={() => showToast('[안내] 신규 브랜드 직접 등록 신청 창이 준비 중입니다.')}
+            onClick={() => showToast('[데모 안내] 신규 브랜드 직접 등록 기능은 서비스 준비 중입니다.')}
             className="text-xs text-gray-700 font-bold flex items-center gap-1 hover:text-black py-1 px-2 rounded-lg hover:bg-gray-50 transition"
           >
             <PlusCircle size={14} className="text-gray-500" />
@@ -139,7 +139,7 @@ export const ShopSell = () => {
               </p>
               <button
                 type="button"
-                onClick={() => showToast('[안내] 신규 브랜드 직접 등록 신청이 접수되었습니다.')}
+                onClick={() => showToast(`[데모 안내] '${searchQuery}' 브랜드 직접 등록 기능은 서비스 준비 중입니다.`)}
                 className="mt-3.5 inline-flex items-center gap-1.5 px-4 py-2 bg-gray-900 text-white rounded-xl text-xs font-bold shadow-xs hover:bg-black transition"
               >
                 '{searchQuery}' 브랜드 직접 등록하기

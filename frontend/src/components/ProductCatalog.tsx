@@ -2,7 +2,15 @@ import { useEffect, useState } from 'react';
 import { ShoppingBag, RefreshCw } from 'lucide-react';
 import { searchProducts, type SearchProduct } from '../lib/productSearch.mjs';
 
-export function ProductCatalog({ brand = '', rentalOnly = false }: { brand?: string; rentalOnly?: boolean }) {
+export function ProductCatalog({ 
+  brand = '', 
+  rentalOnly = false,
+  keyword = '' 
+}: { 
+  brand?: string; 
+  rentalOnly?: boolean;
+  keyword?: string;
+}) {
   const [products, setProducts] = useState<SearchProduct[]>([]);
   const [state, setState] = useState<'loading' | 'success' | 'error'>('loading');
   const [retry, setRetry] = useState(0);
@@ -41,7 +49,12 @@ export function ProductCatalog({ brand = '', rentalOnly = false }: { brand?: str
     const matchBrand = !brand || item.brand === brand;
     const matchRentalOnly = !rentalOnly || item.type === 'RENT';
     const matchFilter = filter === '전체' || item.type === (filter === '렌트' ? 'RENT' : 'BUY');
-    return matchBrand && matchRentalOnly && matchFilter;
+    const cleanKw = keyword.trim().replace(/백|가방/g, ''); // 키워드 정규화
+    const matchKeyword = !keyword.trim() || 
+      item.title.includes(keyword.trim()) || 
+      (cleanKw && item.title.includes(cleanKw)) ||
+      (item.brand && item.brand.includes(keyword.trim()));
+    return matchBrand && matchRentalOnly && matchFilter && matchKeyword;
   });
 
   return (

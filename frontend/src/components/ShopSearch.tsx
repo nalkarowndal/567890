@@ -72,8 +72,8 @@ export const ShopSearch = () => {
   if (!isOpen) return null;
 
   const recommended = [
-    '샤넬', '디올', '루이비통', '구찌', '생로랑', '셀린느', 
-    '프라다', '발렌시아가', '에르메스', '까르띠에', '목걸이', '시계'
+    'Supreme', 'Matin', 'Chrome', '불가리', 'Essentials', 
+    '목걸이', '까르띠에', '시계', '르메르', 'BAPE', 'The'
   ];
 
   const trendingLeft = [
